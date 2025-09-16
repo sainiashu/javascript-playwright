@@ -11,7 +11,7 @@ test('test 2 @sanity', async({})=>{
 test('test 3 @regression', async({})=>{
     console.log("Test 3")
 })
-
+    
 test('test 4 @smoke@regression', async({})=>{
     console.log("Test 4")
 })

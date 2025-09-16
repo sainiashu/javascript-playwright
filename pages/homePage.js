@@ -1,6 +1,11 @@
 class HomePage{
+    /**
+     * 
+     * @param {import('@playwright/test').Page} page 
+     */
     constructor(page){
         this.page= page
+        this.bookSTab = this.page.getByRole('link',{name: 'Books'})
 
     }
 
@@ -14,9 +19,13 @@ class HomePage{
     }
 
     async ClickOnBookSTab(){
-        await this.page.getByRole('link',{name: 'Books'}).first().click()
+        await this.bookSTab.first().click()
         
     }
+    // async ClickOnBookSTab(){
+    //     await this.page.getByRole('link',{name: 'Books'}).first().click()
+        
+    // }
 
     async clickLogout(){
         await this.page.locator(".ico-logout").click()
