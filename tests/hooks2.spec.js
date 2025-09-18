@@ -8,7 +8,7 @@ const BookPage = require ('../pages/bookPage')
 let page;
 
 
-test.beforeEach( async({browser})=>{
+test.beforeEach(async({browser})=>{
 
   page = await browser.newPage()
   const loginPage = new LoginPage(page);

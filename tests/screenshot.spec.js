@@ -5,6 +5,8 @@ test.skip('page screenshot',async({page})=>{
 
     await page.goto('https://demowebshop.tricentis.com/login');
     await page.screenshot({path:'tests/screenshots/'+ Date.now() + 'HomePage.png'})
+    
+    
 })
 
 test.skip('full page screenshot',async({page})=>{

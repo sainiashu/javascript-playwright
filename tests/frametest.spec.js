@@ -3,25 +3,28 @@ const Frame = require('../pages/frame')
 const LoginPage = require('../pages/loginPage')
 
 
-test('Test handle frames',async({page})=>{
-
-    const loginPage = new LoginPage(page)
-    const frame = new Frame(page)
-    await loginPage.goto('https://ui.vision/demo/webtest/frames/')
-    const iframe = await frame.frameHandler('[src="frame_1.html"]')
-    await iframe.locator("//input[@name='mytext1']").fill('hello world')  
-
-})
-
-// test.only('Test handle nested frames',async({page})=>{
+// test('Test handle frames',async({page})=>{
 
 //     const loginPage = new LoginPage(page)
 //     const frame = new Frame(page)
 //     await loginPage.goto('https://ui.vision/demo/webtest/frames/')
-//     const iframe = await frame.frameHandler('[src="frame_2.html"]', '[src="frame_3.html"]')
-//     await iframe.locator("div[id='i6'] div[class='AB7Lab Id5V1']").check()
+//     const iframe = await frame.frameHandler('[src="frame_1.html"]')
+//     await iframe.locator("//input[@name='mytext1']").fill('hello world')  
 
 // })
+
+test.only('Test handle nested frames',async({page})=>{
+
+    const loginPage = new LoginPage(page)
+    const frame = new Frame(page)
+    await loginPage.goto('https://ui.vision/demo/webtest/frames/')
+    // await page.pause()
+    await page.locator('frame').nth(2).contentFrame().getByText('Loading...').contentFrame().getByRole('radio', { name: 'Hi, I am the UI.Vision IDE' }).click();
+    // await page.pause()
+    const iframe = await frame.frameHandler('[src="frame_3.html"]')
+    await iframe.locator("div[id='i6'] div[class='AB7Lab Id5V1']").check()
+
+})
 // test.only('Handled Nested frame', async({page})=>{
 
 //     const loginPage = new LoginPage(page)

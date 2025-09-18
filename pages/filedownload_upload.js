@@ -16,12 +16,15 @@ class FileDownloadUpload
             await generateFile.isEnabled()
             await this.page.locator("//button[@id='create']").click()
 
-
     }
 
-    async fileUpload(path){
+    // async fileUpload(path){
         
-        await this.page.setInputFiles("id=file",[path])
+    //     await this.page.setInputFiles("id=file",[path])
+    // }
+
+    async fileUpload(path){
+        await this.page.setInputFiles('id=file',path)
     }
 }
 

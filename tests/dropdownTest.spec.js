@@ -2,6 +2,7 @@ const {test, expect } = require('@playwright/test')
 const DropDownPage = require('../pages/dropdownPage')
 const LoginPage = require('../pages/loginPage')
 
+
 // test('Test 1 select drop down and multi select', async({page})=>{
 
 //     const dropdownPage = new DropDownPage(page)
@@ -15,6 +16,8 @@ const LoginPage = require('../pages/loginPage')
 
 test('Test 2 select Tree Select', async({page})=>{
 
+
+    
     const dropdownPage = new DropDownPage(page)
     const loginPage = new LoginPage(page)
     await loginPage.goto('https://www.lambdatest.com/selenium-playground/jquery-dropdown-search-demo')

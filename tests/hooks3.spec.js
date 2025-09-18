@@ -11,6 +11,8 @@ let page;
 test.beforeAll( async({browser})=>{
 
   page = await browser.newPage()
+
+  
   const loginPage = new LoginPage(page);
   // const homePage = new HomePage(page);
 
